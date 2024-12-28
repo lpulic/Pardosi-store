@@ -69,9 +69,68 @@ I Love You Claudya❤
         <i class="fab fa-whatsapp">&nbsp;</i>Channel Testimoni. 
       </a>
     </div>
+    <section id="product-list">
+  <h2>Produk Pardosi Store</h2>
+
+  <!-- Button untuk Kategori -->
+  <button class="link category-btn" data-category="hosting">List Produk Hosting</button>
+  <div class="category-content" id="hosting">
+    <p>» Panel Public 1-9 GB: Harga 1K/GB</p>
+    <p>» Panel Private 1-9 GB: Harga 2K/GB</p>
+    <p>» Reseller Panel Public: 5K</p>
+    <p>» Reseller Panel Private: 5K</p>
+    <p>» Admin Panel: 6K</p>
+    <p>» PT Panel: 8K</p>
+    <p>» Owner Panel: 10K</p>
+    <p>» SC Reseller VIP V2: 10K</p>
+    <p>» Murid Nokos Full Tutor: 5K</p>
+    <h4>Kegunaan Panel Pterodactyl</h4>
+    <p>» Bot PushKontak</p>
+    <p>» Bot BUG</p>
+    <p>» Bot MD</p>
+    <p>» dan lain-lain</p>
+    <h4>Spesifikasi Server</h4>
+    <p>» Public: RAM 16 Core 4</p>
+    <p>» Private: RAM 8 Core 4</p>
+    <p>*Harga di atas untuk 1 bulan</p>
+  </div>
+
+  <button class="link category-btn" data-category="vps">VPS Digital Ocean</button>
+  <div class="category-content" id="vps">
+    <p>» RAM 2 Core 2: Harga 15K</p>
+    <p>» RAM 4 Core 2: Harga 30K</p>
+    <p>» RAM 8 Core 4: Harga 40K</p>
+    <p>» RAM 16 Core 4: Harga 50K</p>
+    <h4>Benefit</h4>
+       <p>» Free Install Panel</p>
+    <p>» Free Request Domain</p>
+    <p>» Free Egg Bot WA</p>
+    <p>» Free Install Tema</p>
+    <p>» Free CPanel V2</p>
+    <p>» Garansi 14 Hari 1x Replace</p>
+  </div>
+</section>
+
 
     <div id="hashtag">
       #Pardosi_Store
     </div>
+    <script>
+      const buttons = document.querySelectorAll('.category-btn');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const categoryId = button.getAttribute('data-category');
+    const content = document.getElementById(categoryId);
+
+    // Toggle Display
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+    } else {
+      content.style.display = 'block';
+    }
+  });
+});
+</script>
   </body>
 </html>

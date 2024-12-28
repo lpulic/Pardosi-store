@@ -800,3 +800,49 @@ body {
     494px 1957px #fff, 1296px 431px #fff, 175px 1507px #fff, 831px 121px #fff,
     498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;
 }
+#product-list {
+  padding: -5px;
+  color: var(--accentColor);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.category-btn {
+  margin: 10px 0;
+  width: 100%;
+  max-width: 600px;
+  cursor: pointer;
+}
+
+.category-content {
+  display: none;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 15px;
+  border: 1px solid var(--accentColor);
+  border-radius: 10px;
+  background-color: var(--bgColor2);
+  text-align: left;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.category-content p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* Animasi */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
