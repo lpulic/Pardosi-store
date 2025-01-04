@@ -817,6 +817,9 @@ h2 {
   max-width: 600px;
   cursor: pointer;
     position: relative;
+justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .category-content {
