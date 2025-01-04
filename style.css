@@ -800,60 +800,49 @@ body {
     494px 1957px #fff, 1296px 431px #fff, 175px 1507px #fff, 831px 121px #fff,
     498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;
 }
-#product-list {
-  padding: 20px;
-  color: var(--accentColor);
+#listproduk {
+  margin-top: 20px;
   text-align: center;
-}
-
-h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
 }
 
 .button-container {
-  display: flex;
-  flex-direction: column; /* Tombol tersusun vertikal */
-  align-items: center; /* Rata tengah secara horizontal */
-  justify-content: center; /* Rata tengah secara vertikal */
-  margin: 0 auto; /* Pastikan container ada di tengah */
-  width: 100%; /* Sesuaikan ukuran */
+  margin-top: 20px;
+  display: none; /* Tombol awalnya disembunyikan */
+  flex-direction: column;
+  align-items: center;
 }
 
-.category-btn {
-  width: 80%; /* Sesuaikan ukuran tombol */
-  max-width: 400px; /* Maksimal lebar tombol */
-  margin: 10px 0; /* Jarak antar tombol */
-  text-align: center;
+.button-container.show {
+  display: flex; /* Tampilkan tombol saat animasi aktif */
+  animation: slideDown 0.5s ease-in-out;
 }
 
-
-.category-content {
-  display: none;
-  max-width: 600px;
-  margin: 10px auto;
-  padding: 15px;
-  border: 1px solid var(--accentColor);
-  border-radius: 10px;
-  background-color: var(--bgColor2);
-  text-align: left;
-  animation: slideDown 0.3s ease-in-out;
-}
-
-.category-content p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-}
-
-/* Animasi */
 @keyframes slideDown {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-20px); /* Posisi awal di atas */
   }
-  100% {
+  to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Posisi akhir sejajar */
   }
+}
+
+.custom-button {
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #333; /* Warna tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Hilangkan border */
+  border-radius: 5px; /* Sudut tombol melengkung */
+  cursor: pointer; /* Pointer mouse saat hover */
+  transition: background-color 0.3s ease-in-out; /* Animasi hover */
+}
+
+.custom-button:hover {
+  background-color: #555; /* Warna tombol saat hover */
 }
 
