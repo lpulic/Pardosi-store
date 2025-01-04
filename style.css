@@ -811,23 +811,36 @@ h2 {
   font-size: 1.5rem;
 }
 
-.category-btn {
-  margin: 10px 0;
-  width: 100%;
-  max-width: 600px;
-  cursor: pointer;
-     width: 80%; 
-  max-width: 300px;
-  text-align: center;
+/* Container untuk produk */
+.category-container {
+  display: flex; /* Aktifkan flexbox */
+  flex-direction: column; /* Susun button secara vertikal */
+  justify-content: center; /* Button tetap berada di tengah */
+  align-items: center; /* Pastikan semua item di tengah */
+  margin-top: 20px; /* Atur jarak dengan elemen atas */
+  gap: 10px; /* Atur jarak antar-button */
 }
 
-.category-container {
-  display: flex; 
-  justify-content: center; 
-  flex-direction: column;
-  align-items: center; 
-  gap: 10px; 
+/* Button kategori */
+.category-btn {
+  width: 90%; /* Lebar relatif */
+  max-width: 300px; /* Lebar maksimum */
+  padding: 10px 20px; /* Ruang dalam button */
+  border-radius: 10px; /* Membulatkan sudut */
+  border: 1px solid white; /* Warna border */
+  color: white; /* Warna teks */
+  background-color: transparent; /* Transparan untuk efek minimalis */
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease-in-out; /* Animasi hover */
 }
+
+/* Hover efek */
+.category-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Highlight */
+  transform: scale(1.05); /* Perbesar sedikit */
+}
+
 
 .category-content {
   display: none;
