@@ -90,7 +90,6 @@
     transform: translateY(0);
   }
 }
-
 </style>
 
   </head>
@@ -197,10 +196,12 @@ I Love You Claudya❤
 </section>
   </div>
 
-<div style="text-align: center;">
-  <button id="mainButton" class="custom-button">Kumpulan Script Free</button>
-  <div id="buttonContainer" class="button-container"></div>
+<div class="button-container">
+  <button id="main-button" class="category-btn">Kumpulan Script Free</button>
+  <div id="additional-buttons" class="additional-buttons"></div>
+  
 </div>
+
     
     <div id="hashtag">
       #Pardosi_Store
@@ -223,29 +224,45 @@ buttons.forEach(button => {
 });
 </script>
     <script>
-  const container = document.getElementById("buttonContainer");
+ // Akses elemen tombol utama dan kontainer tombol tambahan
+const mainButton = document.getElementById("main-button");
+const additionalButtons = document.getElementById("additional-buttons");
 
-  async function fetchButtons() {
-    try {
-      const response = await fetch("buttons.json");
-      const buttons = await response.json();
+// Data link dan judul
+const products = [
+  { name: "Kebutuhan JB Pardosi Store", link: "https://www.mediafire.com/file/ld3n447z8h286qk/APK_KEBUTUHAN_JB_BY_PARDOSI_STORE.zip/file" },
+  { name: "SC Push Publik Pardosi Store", link: "https://www.mediafire.com/file/a2sxwfk1r3q4jye/SC_PUSH_PUBLIK_PARDOSI_STORE.zip/file" },
+  { name: "SC CPANEL 1 Server", link: "https://www.mediafire.com/file/slbpn2o7cigrh6v/SC_CPANEL_1_SERVER.zip/file" },
+  { name: "SC Rafathar V4", link: "https://www.mediafire.com/file/hmzbe75d4v4ih5c/RAFATHAR_V4_MODIFIED_BY_PARDOSI.zip/file" },
+  { name: "Base SC Type Case", link: "https://www.mediafire.com/file/c6xw7onbk210d8t/BASE_SC_TYPE_CASE.zip/file" },
+  { name: "ZynxzoV15 No Enc", link: "https://www.mediafire.com/file/lwn62ejdd2ultyy/ZYNXZOV15_NO_ENC_FULL.zip/file" },
+  { name: "SC Qio V15", link: "https://www.mediafire.com/file/9zz89scx6062e2x/نصوصV15+(1).zip/file" },
+  { name: "Zynxzoo V9", link: "https://www.mediafire.com/file/al0rehisa4jgpt4/Zʏɴxᴢᴏᴏᴠᴠɪᴘ+V9.0(1).zip/file" },
+  { name: "Egg Whatsapp Bot", link: "https://www.mediafire.com/file/qiv1vtgorhbhvc1/egg-node-j-s(1)_090050.json/file" },
+  { name: "Thema Billing Pterodactyl", link: "https://www.mediafire.com/file/kl8o9dm8beeiai5/pterodactyl+biliing+(SFILE.MOBI).zip/file" },
+  { name: "Thema Stellar Pterodactyl", link: "https://www.mediafire.com/file/lye46vd548l5hzv/STELLAR+(SFILE.MOBI).zip/file" },
+  { name: "Thema Enigma Pterodactyl", link: "https://www.mediafire.com/file/l3mqippve6g2ki6/ENIGMA+FROM+HIKARU+YOUKI+(SFILE.MOBI).zip/file" },
+  { name: "Liya MD", link: "https://www.mediafire.com/file/u1my1508ow7qlvg/Liyaa_MD_%2528Free%2529_v1.1.zip/file"}
+];
 
-      buttons.forEach(button => {
-        const btn = document.createElement("button");
-        btn.className = "custom-button";
-        btn.textContent = button.title;
-        btn.onclick = () => window.open(button.link, "_blank");
-        container.appendChild(btn);
-      });
-    } catch (error) {
-      console.error("Error fetching buttons:", error);
-    }
+// Event listener untuk tombol utama
+mainButton.addEventListener("click", () => {
+  // Toggle class 'show' untuk memunculkan/menghilangkan tombol tambahan
+  additionalButtons.classList.toggle("show");
+
+  // Tambahkan tombol baru (jika belum ada)
+  if (additionalButtons.children.length === 0) {
+    products.forEach(product => {
+      const newButton = document.createElement("a");
+      newButton.href = product.link; // Link ke Mediafire
+      newButton.target = "_blank"; // Buka di tab baru
+      newButton.classList.add("additional-btn");
+      newButton.textContent = product.name; // Judul tombol
+      additionalButtons.appendChild(newButton);
+    });
   }
+});
 
-  document.getElementById("mainButton").addEventListener("click", () => {
-    container.classList.toggle("show");
-    fetchButtons();
-  });
 </script>
 
   </body>
