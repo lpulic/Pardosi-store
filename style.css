@@ -816,6 +816,7 @@ h2 {
   width: 100%;
   max-width: 600px;
   cursor: pointer;
+    position: relative;
 }
 
 .category-content {
