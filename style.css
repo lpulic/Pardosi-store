@@ -811,12 +811,22 @@ h2 {
   font-size: 1.5rem;
 }
 
-.category-btn {
-  margin: 10px 0;
-  width: 100%;
-  max-width: 600px;
-  cursor: pointer;
+.button-container {
+  display: flex;
+  flex-direction: column; /* Tombol tersusun vertikal */
+  align-items: center; /* Rata tengah secara horizontal */
+  justify-content: center; /* Rata tengah secara vertikal */
+  margin: 0 auto; /* Pastikan container ada di tengah */
+  width: 100%; /* Sesuaikan ukuran */
 }
+
+.category-btn {
+  width: 80%; /* Sesuaikan ukuran tombol */
+  max-width: 400px; /* Maksimal lebar tombol */
+  margin: 10px 0; /* Jarak antar tombol */
+  text-align: center;
+}
+
 
 .category-content {
   display: none;
