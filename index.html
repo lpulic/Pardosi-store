@@ -120,6 +120,11 @@ I Love You Claudya❤
 </section>
   </div>
 
+<div style="text-align: center;">
+  <button id="mainButton" class="custom-button">Kumpulan Script Free</button>
+  <div id="buttonContainer" class="button-container"></div>
+</div>
+    
     <div id="hashtag">
       #Pardosi_Store
     </div>
@@ -140,5 +145,31 @@ buttons.forEach(button => {
   });
 });
 </script>
+    <script>
+  const container = document.getElementById("buttonContainer");
+
+  async function fetchButtons() {
+    try {
+      const response = await fetch("buttons.json");
+      const buttons = await response.json();
+
+      buttons.forEach(button => {
+        const btn = document.createElement("button");
+        btn.className = "custom-button";
+        btn.textContent = button.title;
+        btn.onclick = () => window.open(button.link, "_blank");
+        container.appendChild(btn);
+      });
+    } catch (error) {
+      console.error("Error fetching buttons:", error);
+    }
+  }
+
+  document.getElementById("mainButton").addEventListener("click", () => {
+    container.classList.toggle("show");
+    fetchButtons();
+  });
+</script>
+
   </body>
 </html>
